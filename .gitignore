@@ -7,8 +7,8 @@ __pycache__/
 *.so
 
 .claude
-
-草稿*.md
+CLAUDE.md
+草稿*
 
 # Distribution / packaging
 .Python
