@@ -30,7 +30,7 @@ slides/第X课-标题/
 ├── slides.md            # 本模板（主讲稿）
 ├── package.json         # 主题与依赖锁定
 ├── components/          # 自定义 Vue 组件（可选）
-│   └── MTrixBadge.vue   # M-TRIX 角标 / Bug 标记 等
+│   └── MultiTrixBadge.vue   # Multi-TRIX 角标 / Bug 标记 等
 ├── public/              # 静态资源（图片 / 视频 / 字体）
 │   ├── cover.png        # 封面插图
 │   ├── turtle-demo.gif  # 海龟课演示动画
@@ -68,11 +68,11 @@ slides/第X课-标题/
 theme: seriph              # [ ] 主题名（默认 seriph；海龟课可换 apple-basic）
 title: 第 X 课：标题        # [ ] 浏览器标签页标题
 info: |
-  ## M-TRIX Python 教学手册
+  ## Multi-TRIX THON 教学手册
   第 X 章 第 X 节：标题
   配套 T-02 教材草稿 + T-05 脚本安排
 author:                    # [ ] 主讲老师（多个用数组）
-  - M-Boy 老师
+  - Multi-Boy 老师
 keywords: python, mtrix, gesp, 1-2-3-4
 favicon: /favicon.ico
 class: text-center          # [ ] 全局文本对齐：text-center / text-left
@@ -116,13 +116,13 @@ transition: slide-left      # [ ] 全局转场（与 015 锁定一致）
 
 |   #   | 类型   | 文件名（建议）     |   所在页面   | 用途 / 描述（给 mmx 或老师看）                                  |     方式      |   状态   |
 | :---: | :----- | :----------------- | :----------: | :-------------------------------------------------------------- | :-----------: | :------: |
-|   1   | 🖼 图片 | `cover.png`        |    A.封面    | 课程主题插图：M-Boy 站在 Minetest 草原，手持 [本课核心比喻物品] |  `[MMX 图]`   | ⬜ 待生成 |
+|   1   | 🖼 图片 | `cover.png`        |    A.封面    | 课程主题插图：Multi-Boy 站在 Minetest 草原，手持 [本课核心比喻物品] |  `[MMX 图]`   | ⬜ 待生成 |
 |   2   | 🎵 音频 | `bgm-main.mp3`     |   全课背景   | 轻快儿童探险风，60~120s 平滑循环                                |  `[MMX 音]`   | ⬜ 待生成 |
 |   3   | 🖼 图片 | `kpt-{name}.png`   |  C.7 / C.10  | 知识点 1/2 的拟物图（如 `kpt-print.png` = 喊话器）              |  `[MMX 图]`   | ⬜ 待生成 |
 |   4   | 🎬 视频 | `demo-{topic}.mp4` | D.第一次运行 | 海龟绘图录屏 / 代码运行录屏，5~10s                              | `[MANUAL 视]` | ⬜ 待录制 |
 |   5   | 🔊 音效 | `sfx-bug.mp3`      |   E.Bug 课   | "哐当"一声，红色报错时播放                                      |  `[MMX 音]`   | ⬜ 待生成 |
 |   6   | 🔊 音效 | `sfx-win.mp3`      |  G.通关仪式  | 胜利号角 3 秒                                                   |  `[MMX 音]`   | ⬜ 待生成 |
-|   7   | 🖼 图片 | `end-bg.png`       |    H.结尾    | 课程收尾插图：M-Boy 挥手告别                                    |  `[MMX 图]`   | ⬜ 待生成 |
+|   7   | 🖼 图片 | `end-bg.png`       |    H.结尾    | 课程收尾插图：Multi-Boy 挥手告别                                    |  `[MMX 图]`   | ⬜ 待生成 |
 
 > 状态列：`⬜ 待生成` / `🟡 生成中` / `✅ 已就位`。
 > 知识点拟物图数量 = 本课新知识点数量（如本节 2 个新知识点 = 2 张图）。
@@ -154,21 +154,21 @@ transition: slide-left      # [ ] 全局转场（与 015 锁定一致）
 ```bash
 # === 1. 基础用法：单张图片（生成到临时目录，再用 mv 重命名） ===
 mmx image generate \
-  --prompt "M-Boy 冒险者站在 Minetest 草原上，手持一个发光的喊话器，背景是方块草地，鲜艳卡通风格，儿童友好" \
+  --prompt "Multi-Boy 冒险者站在 Minetest 草原上，手持一个发光的喊话器，背景是方块草地，鲜艳卡通风格，儿童友好" \
   --aspect-ratio 16:9 \
   --out-dir ./tmp-img/ --out-prefix cover --quiet
 # stdout: ./tmp-img/cover-1.png
 mv ./tmp-img/cover-1.png public/cover.png
 
 # === 2. 保持角色一致性：用 --subject-ref 引用第一张图作为角色锚点 ===
-# 先生成一张"标准 M-Boy"作为参考
+# 先生成一张"标准 Multi-Boy"作为参考
 mmx image generate \
-  --prompt "M-Boy 冒险者正面立绘：12 岁男孩，卡通风格，蓝色 T 恤，棕色短发，红色背包" \
+  --prompt "Multi-Boy 冒险者正面立绘：12 岁男孩，卡通风格，蓝色 T 恤，棕色短发，红色背包" \
   --aspect-ratio 1:1 --out-dir ./tmp-img/ --out-prefix mboy-ref --quiet
 
 # 后续所有插图都引用上面这张，保持角色一致
 mmx image generate \
-  --prompt "M-Boy 站在宝箱前打开战利品，表情惊喜" \
+  --prompt "Multi-Boy 站在宝箱前打开战利品，表情惊喜" \
   --subject-ref "type=character,image=./tmp-img/mboy-ref-1.png" \
   --aspect-ratio 16:9 --out-dir ./tmp-img/ --out-prefix kpt-1 --quiet
 mv ./tmp-img/kpt-1-1.png public/kpt-1.png
@@ -330,7 +330,7 @@ public/
 ├── kpt-{name}.png       # 知识点拟物图（kpt = knowledge point）
 ├── kp-{name}.png        # 同一知识点不同页的变体（kp = knowledge point page）
 ├── demo-{topic}.mp4     # 演示视频（录屏 / 动画）
-├── char-{name}.png      # 角色立绘（M-Boy / 海龟助手 / 村长等）
+├── char-{name}.png      # 角色立绘（Multi-Boy / 海龟助手 / 村长等）
 └── bg-{theme}.png       # 章节背景图
 ```
 
@@ -370,11 +370,11 @@ mmx auth status                          # 确认已登录
 mkdir -p public tmp-img                  # public 放最终素材，tmp-img 放临时
 
 # === 1. 一次性生成封面 + 结尾 + 主背景音乐 ===
-mmx image generate --prompt "课程封面：M-Boy 站在 Minetest 主世界，手持本课核心比喻物品，鲜艳卡通 2D" \
+mmx image generate --prompt "课程封面：Multi-Boy 站在 Minetest 主世界，手持本课核心比喻物品，鲜艳卡通 2D" \
   --aspect-ratio 16:9 --out-dir ./tmp-img/ --out-prefix cover --quiet
 mv ./tmp-img/cover-1.png public/cover.png
 
-mmx image generate --prompt "课程结尾：M-Boy 站在城堡顶端挥手，背景夕阳，鲜艳卡通 2D" \
+mmx image generate --prompt "课程结尾：Multi-Boy 站在城堡顶端挥手，背景夕阳，鲜艳卡通 2D" \
   --aspect-ratio 16:9 --out-dir ./tmp-img/ --out-prefix endbg --quiet
 mv ./tmp-img/endbg-1.png public/end-bg.png
 
@@ -675,7 +675,7 @@ layout: two-cols
 # 🎮 在 Minetest 里这样用
 
 ```python {1,3-4|2,5-7|all}
-# M-Boy 的财富清单
+# Multi-Boy 的财富清单
 diamonds = 3
 gold = 100
 print("我的钻石：", diamonds)
@@ -861,7 +861,7 @@ layout: section
 # 🛠 1.3 创造与协作
 
 <div class="text-sm opacity-70 mt-4">
-  现在轮到 M-Boy 冒险者出手啦！
+  现在轮到 Multi-Boy 冒险者出手啦！
 </div>
 ```
 
@@ -924,7 +924,7 @@ layout: default
 
 <v-clicks>
 
-- [ ] 让玩家**输入自己的名字**，再打印 "M-Boy [名字] 的战利品报告"。
+- [ ] 让玩家**输入自己的名字**，再打印 "Multi-Boy [名字] 的战利品报告"。
 - [ ] 打印宝物数量后，**追加一句**"其中 3 件是稀有物品"（用变量存稀有数）。
 - [ ] 用 `input()` 接收玩家输入的"想添加的宝物"，**追加到列表**再打印。
 
@@ -938,7 +938,7 @@ layout: default
 > backpack = ["钻石", "金锭", "红石"]
 > rare = 2
 > backpack.append(input("想添加什么？"))
-> print("M-Boy", name, "的战利品报告")
+> print("Multi-Boy", name, "的战利品报告")
 > print("共", len(backpack), "件，其中", rare, "件稀有")
 > ```
 
@@ -1104,7 +1104,7 @@ background: /end-bg.png         # [填] 结尾图
 </div>
 
 <div class="abs-br m-6 text-xs opacity-50">
-  M-TRIX Python 教学手册 · 第 X 章 · 第 X 课
+  Multi-TRIX THON 教学手册 · 第 X 章 · 第 X 课
 </div>
 ```
 
@@ -1176,12 +1176,12 @@ _Notes:_
 <!-- 60s -->          <!-- 015 脚本表的"用时"标记，不渲染 -->
 ```
 
-### 5. M-TRIX 项目自定义组件（推荐封装到 `components/`）
+### 5. Multi-TRIX THON 项目自定义组件（推荐封装到 `components/`）
 
-> 把角标、Bug 标记、M-Boy 头像等**重复使用的元素**封装成 Vue 组件，**避免每页重复写**。
+> 把角标、Bug 标记、Multi-Boy 头像等**重复使用的元素**封装成 Vue 组件，**避免每页重复写**。
 
 ```vue
-<!-- components/MTrixBadge.vue -->
+<!-- components/MultiTrixBadge.vue -->
 <template>
   <span class="mtrix-badge" :class="type">
     <slot />
@@ -1227,7 +1227,7 @@ layout: default
 ### 5 段完整性
 - [ ] **A 封面** 1 页。
 - [ ] **B 上节回顾** 1~3 页（**第 1 课必须整段删除**）。
-- [ ] **C 章节引入** 8~12 页（含 M-TRIX 百科 + 第一次运行）。
+- [ ] **C 章节引入** 8~12 页（含 Multi-TRIX百科 + 第一次运行）。
 - [ ] **E Bug 猎人** 8~12 页，**至少 3 个 Bug + 3 种错误类型 + 1 个代码修复家**。
 - [ ] **F 创造与协作** 10~15 页，**基础 ≥ 2 + 进阶 ≥ 2**。
 - [ ] **G 复盘** 4~6 页，**速记 + 笔记 + 易错点 + 通关仪式**齐全。
@@ -1236,7 +1236,7 @@ layout: default
 
 ### 教学硬性约定
 - [ ] 比喻全部用**具体物品/角色**（喊话器、背包、便利贴），**无**"工具"、"概念"空泛词。
-- [ ] 情境引入全部以 `M-Boy 冒险者` 或 `玩家` 为主语，**无**"我们"、"你们"。
+- [ ] 情境引入全部以 `Multi-Boy 冒险者` 或 `玩家` 为主语，**无**"我们"、"你们"。
 - [ ] 5 段共享同一个 Minetest 主线（封面→结尾一以贯之）。
 - [ ] 变量命名沿用（第一节叫 `backpack`，后面不突然换 `inventory`）。
 - [ ] 提问页**有"参考解答"且用 `>` 引用块折叠**。
@@ -1254,7 +1254,7 @@ layout: default
 ### 跨页一致性
 - [ ] 全课**只**用一种动画约定（`v-click` 为默认）。
 - [ ] 全课**只**用一种强调色（红石红 #C0392B）。
-- [ ] 全课**只**用一种 M-Boy 头像 / 章节插图风格。
+- [ ] 全课**只**用一种 Multi-Boy 头像 / 章节插图风格。
 - [ ] 学生独立操作环节（F 段）**累计用时 ≥ 25 分钟**。
 
 ### 媒体素材

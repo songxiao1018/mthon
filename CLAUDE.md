@@ -4,10 +4,10 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## 项目性质
 
-本仓库是 **M-TRIX Python 教学手册** 的 Markdown 源文档项目，**非代码项目**。无 `package.json` / `pyproject.toml` / 测试框架，Python 片段作为教学内容内嵌于 Markdown 而非可执行代码。
+本仓库是 **Multi-TRIX THON 教学手册** 的 Markdown 源文档项目，**非代码项目**。无 `package.json` / `pyproject.toml` / 测试框架，Python 片段作为教学内容内嵌于 Markdown 而非可执行代码。
 
 - **受众**：10–16 岁零基础青少年，对齐 **CCF GESP Python 1–4 级考纲**
-- **世界观**：以 Minetest 沙盒游戏为沉浸背景，主角 M-Boy / M-Girl 串联知识点
+- **世界观**：以 Minetest 沙盒游戏为沉浸背景，主角 Multi-Boy / Multi-Girl 串联知识点
 - **双轨教学**：纯逻辑编程（`print` / 变量 / 输入）+ Turtle 可视化
 - **License**：MIT（仅供学习与教学使用，禁止商用，见 `LICENSE`）
 
@@ -56,14 +56,14 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 每写一节新课前必读 `BOOK/011 知识点草稿模板.md` 末尾的 ✅ 自检清单。以下是**不可违反**的项目：
 
 1. **比喻优先**：每个知识点必须配一个**具体物品/角色**的比喻（`print()`=喊话器，变量=背包，注释=便利贴，`import`=打开工具包，`Turtle()`=召唤助手）。**禁止**用"工具"、"概念"这种空泛词。
-2. **情境引入钩子**：必须以"M-Boy 冒险者"或"玩家"为主语（不要用"我们"这种含糊视角），1–3 句话、≤ 60 字，最后一句指向本知识点核心动作。
+2. **情境引入钩子**：必须以"Multi-Boy 冒险者"或"玩家"为主语（不要用"我们"这种含糊视角），1–3 句话、≤ 60 字，最后一句指向本知识点核心动作。
 3. **代码可直接运行**：禁止伪代码、`<xxx>` 占位符；每个示例必须带 `#` 行内注释。
 4. **第一次运行覆盖全部知识点**：示例之间递进（最小化 → 贴近情境 → 联合使用），帮助学生建立知识点之间的联系。
 5. **互动提问必须有"参考解答"**：用 `>` 引用块折叠。
 6. **随堂笔记 80–150 字**：5 分钟内可抄完，优先用口诀、顺口溜、表格、问答。
 7. **情境/代码/提问/笔记四方呼应同一个 Minetest 主题**，不要一会儿村庄一会儿地下城。
 8. **Bug猎人模块**：报错信息尽可能复用"第一次运行"中会出现的错误，便于学生复习。
-9. **章节引入的"M-TRIX百科"**：严格遵循 `- **知识点 = 比喻**：定义。\n  > 使用方法：…\n  > 示例：…` 三段式格式。
+9. **章节引入的"Multi-TRIX百科"**：严格遵循 `- **知识点 = 比喻**：定义。\n  > 使用方法：…\n  > 示例：…` 三段式格式。
 
 ## 知识点的全局编号
 
@@ -77,6 +77,6 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## 课件配套物料（已存在，非 Claude 产出）
 
-- `M-TRIX Python 教学手册.xmind` / `.png` — 全书思维导图（XMind 源文件 + 导出图）
+- `Multi-TRIX THON 教学手册.xmind` / `.png` — 全书思维导图（XMind 源文件 + 导出图）
 - `BOOK/草稿 课件/NoteQuest/NOTEQUEST_EW_cn.pdf` — Minetest NoteQuest Mod 中文文档（用于海龟课情境素材）
 - `BOOK/草稿 课件/*.html` / `*.docx` — 旧版互动课件大纲（HTML 可浏览器直开，docx 为 Office 源文件）
