@@ -85,10 +85,27 @@ fonts:
   mono: 'Fira Code, monospace'
 aspectRatio: 16/9           # 课件比例（与投影仪一致）
 canvasWidth: 960            # 画布宽（不要超过 980 避免溢出）
-addons:
-  - slidev-addon-components
+addons:                     # [填] addon 短名（**不要带 slidev-addon- 前缀**！详见下方"⚠️ 常见错误"）
+  - components              # 示例：components / clickable-steps / etc.
 transition: slide-left      # [ ] 全局转场（与 015 锁定一致）
 ---
+```
+
+> ⚠️ **`addons` 字段常见错误**（2026-06-08 踩坑实录）
+>
+> ```yaml
+> # ❌ 错：包名带 slidev-addon- 前缀（会装出 slidev-addon-slidev-addon-components → 404）
+> addons:
+>   - slidev-addon-components
+>
+> # ✅ 对：addon 短名（Slidev 会自动加 slidev-addon- 前缀，npm 包名才正确）
+> addons:
+>   - components
+>
+> # ✅ 更省事：完全删掉 addons 字段（如果 slides.md 里没用到任何 addon 组件，如 <Tweet/> / <Video/> / <ClickableSteps/> 等）
+> ```
+>
+> 怎么判断"用没用 addon 组件"？在 slides.md 里全文搜 `<Tweet` / `<Video` / `<ClickableSteps` / `<SlidevVideo` 这些**尖括号开头的标签**，**搜到才需要** addons；搜不到就**直接删掉** addons 字段最省事。
 ```
 
 ---
