@@ -10,19 +10,10 @@ __pycache__/
 .claude
 .claude/skills/
 worktrees/
-slides/*
 
 # 草稿文件（任何以"草稿"开头的文件/目录）
 # 触发场景：BOOK/NN 章名/草稿 T-XX NNN 标题.md
 草稿*
-docs/superpowers/plans/*
-docs/*
-
-BOOK/课件物料/*
-
-# 课件物料下的临时草稿（防御性兜底）
-BOOK/课件物料/草稿*
-BOOK/课件物料/*/草稿*
 
 # Distribution / packaging
 .Python
