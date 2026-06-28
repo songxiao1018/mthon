@@ -10,6 +10,7 @@ __pycache__/
 .claude
 .claude/skills/
 worktrees/
+docs/*
 
 # 草稿文件（任何以"草稿"开头的文件/目录）
 # 触发场景：BOOK/NN 章名/草稿 T-XX NNN 标题.md
